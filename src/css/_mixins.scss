@@ -1,0 +1,29 @@
+@mixin grid {
+  display: grid;
+  height: 100%;
+  position: relative;
+}
+
+@mixin red {
+  color: red;
+}
+
+@mixin yellow {
+  color: #F2CA52
+}
+
+@mixin hamburger {
+  div {
+    background-color: black;
+    height: 4px;
+    margin: 4px 0;
+    width: 24px;
+  }
+}
+
+@mixin abs-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

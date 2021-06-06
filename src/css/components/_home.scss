@@ -1,0 +1,148 @@
+@use '../mixins';
+
+.home {
+  height: 100vh;
+  padding-left: 3rem;
+  position: relative;
+  width: 100vw;
+
+  .home__grid {
+    @include mixins.grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .home__menu-selection {
+    overflow: clip;
+  }
+}
+
+.home__main {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+
+  .home__main-grid {
+    @include mixins.grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    
+    .home__main-close {
+      grid-column: 6 / span 1;
+      grid-row: 1 / span 1;
+      position: relative;
+      z-index: 3;
+
+      div:first-child, div:nth-child(2) {
+        @include mixins.abs-center;
+        background-color: black;
+        height: 4px;
+        margin: 4px 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transform-origin: center;
+        width: 24px;  
+      }
+      div:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+    }
+
+    a:active, a:link, a:visited {
+      @include mixins.yellow;
+    }
+  
+    a:hover {
+      color: black;
+    }
+
+    @mixin home__main-menu-selection {
+      grid-column: 1 / span 4;
+      grid-row: 2 / span 4;
+      font-family: 'IBM Plex Sans';
+      font-weight: 700;
+      font-size: 3rem;
+      z-index: 1;
+      
+      p:first-child {
+        margin-bottom: 2rem;
+      }
+      
+      span.red {
+        @include mixins.red;
+      }
+    
+      span.yellow {
+        @include mixins.yellow;
+      } 
+    }
+  
+    .home__greeting {
+      @include home__main-menu-selection;
+    }
+    
+    .home__projects {
+      @include home__main-menu-selection;
+  
+      p:not(:first-child) {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.home__menu {
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 6;
+  position: relative;
+
+  .home__menu-grid {
+    @include mixins.grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+
+    .home__menu-list {
+      background-color: white;
+      grid-column: 1 / span 6;
+      grid-row: 1 / span 6;
+      z-index: 2;
+      
+      ul {
+        @include mixins.abs-center;
+        padding: 0;
+        text-align: center;
+
+        li {
+          font-family: 'IBM Plex Sans';
+          font-weight: 600;
+          font-size: 2rem;
+          list-style-type: none;
+          margin-bottom: 2rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  
+    .home__menu-hamburger {
+      @include mixins.hamburger;
+      @include mixins.abs-center;
+      grid-column: 5 / span 2;
+      grid-row: 3 / span 2;
+  
+      p {
+        font-family: 'IBM Plex Sans';
+        font-size: .75rem;
+        left: 100%;
+        line-height: 1em;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        transform-origin: center;
+      }
+    }
+  }
+}
