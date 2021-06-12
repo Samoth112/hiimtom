@@ -75,7 +75,7 @@ export default function Home(): React.ReactElement {
             </Grid>
           </section>
           <section className="home__menu-selection">
-            <img src="https://i.imgur.com/Nd4Q7Tu.png" />
+            <img src="https://i.imgur.com/hbQuUUp.png" />
           </section>
         </Route>
       </Grid>
