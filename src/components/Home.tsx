@@ -36,7 +36,7 @@ export default function Home(): React.ReactElement {
                   <section className="home__greeting">
                     <p>Hi<span className="red">.</span> I'm Tom<span className="red">.</span></p>
                     <p>
-                      I'm a full stack web developer working in React/Redux, Typescript, and Rails<span className="red">.</span><span className="yellow"> Check out my project, <a href="https://github.com/Samoth112/biblio-lite">Biblio</a></span><span className="red-period">.</span>
+                      I'm a full stack web developer working in React/Redux, Typescript, and Rails<span className="red">.</span><span className="yellow"> Check out my project, <a href="https://biblio-lite.netlify.app/">Biblio</a></span><span className="red-period">.</span>
                     </p>
                   </section>
                 </Route>
